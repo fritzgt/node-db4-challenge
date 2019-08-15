@@ -43,7 +43,7 @@ exports.up = function(knex) {
       .createTable('instructions', tbl => {
         tbl.increments();
         tbl
-          .text('recipes_name', 128)
+          .text('instruction', 128)
           .unique()
           .notNullable();
         tbl
