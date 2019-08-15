@@ -14,7 +14,6 @@ exports.up = function(knex) {
       .createTable('ingredients', tbl => {
         tbl.increments();
         tbl.text('ingredient_name', 128).notNullable();
-        tbl.float('quantity', 128).notNullable();
       })
       //This table will link both recipes and ingredients
       //in the many to monay concept this would be
@@ -28,6 +27,8 @@ exports.up = function(knex) {
           .inTable('recipes')
           .onUpdate('CASCADE')
           .onDelete('CASCADE');
+        //Quantity
+        tbl.float('quantity', 128).notNullable();
         tbl
           .integer('ingredients_id')
           .unsigned()
