@@ -46,10 +46,7 @@ exports.up = function(knex) {
           .text('instruction', 128)
           .unique()
           .notNullable();
-        tbl
-          .float('step_num', 128)
-          .unique()
-          .notNullable();
+        tbl.integer('step_num', 128).notNullable();
         tbl
           .integer('recipes_id')
           .unsigned()
