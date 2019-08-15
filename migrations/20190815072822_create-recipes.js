@@ -36,6 +36,8 @@ exports.up = function(knex) {
           .inTable('ingredients')
           .onUpdate('CASCADE')
           .onDelete('CASCADE');
+        //Make the combination of foreign keys unique.
+        tbl.primary(['recipes_id', 'ingredients_id']);
       })
       //The instructions table is link to the recipes
       .createTable('instructions', tbl => {
