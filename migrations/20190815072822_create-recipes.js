@@ -43,11 +43,8 @@ exports.up = function(knex) {
       //The instructions table is link to the recipes
       .createTable('instructions', tbl => {
         tbl.increments();
-        tbl
-          .text('instruction', 128)
-          .unique()
-          .notNullable();
-        tbl.integer('step_num', 128).notNullable();
+        tbl.text('instruction', 128).notNullable();
+        tbl.integer('step_num').notNullable();
         tbl
           .integer('recipes_id')
           .unsigned()

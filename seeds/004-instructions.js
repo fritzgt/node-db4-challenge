@@ -5,8 +5,12 @@ exports.seed = function(knex) {
     .then(function() {
       // Inserts seed entries
       return knex('instructions').insert([
-        { instruction: 'boil', step_num: 1, recipes_id: 1 },
-        { instruction: 'mix', step_num: 1, recipes_id: 2 }
+        { instruction: 'Boil water', step_num: 1, recipes_id: 1 },
+        { instruction: 'Add ingredients', step_num: 2, recipes_id: 1 },
+        { instruction: 'Eat', step_num: 3, recipes_id: 1 },
+        { instruction: 'Add ingredients', step_num: 1, recipes_id: 2 },
+        { instruction: 'Mix salad', step_num: 2, recipes_id: 2 },
+        { instruction: 'Eat!', step_num: 3, recipes_id: 2 }
       ]);
     });
 };
